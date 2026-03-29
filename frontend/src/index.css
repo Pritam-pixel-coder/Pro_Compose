@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: #fdfdfd;
+    --foreground: #111827;
+    
+    --card: #ffffff;
+    --card-foreground: #111827;
+    
+    --popover: #ffffff;
+    --popover-foreground: #111827;
+    
+    --primary: #2563eb;
+    --primary-foreground: #ffffff;
+    
+    --secondary: #f1f5f9;
+    --secondary-foreground: #1e293b;
+    
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    
+    --accent: #f1f5f9;
+    --accent-foreground: #1e293b;
+    
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #e2e8f0;
+    --input: #ffffff;
+    --ring: #94a3b8;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #0f1115;
+    --foreground: #f8fafc;
+    
+    --card: #ffffff;
+    --card-foreground: #111827;
+    
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
+    
+    --primary: #463bf9; /* AIMreply inspired deep blue/purple */
+    --primary-foreground: #ffffff;
+    
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+    
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+    
+    --destructive: #7f1d1d;
+    --destructive-foreground: #f8fafc;
+
+    --border: #232732;
+    --input: #15181e;
+    --ring: #463bf9;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground tracking-tight;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* AIM Reply Inspired Styles */
+.aim-card {
+  @apply bg-[#15181e] border border-[#232732] rounded-2xl shadow-lg;
+}
+
+.aim-input {
+  @apply w-full bg-[#0f1115] border border-[#232732] rounded-xl px-4 py-2.5 text-[#f8fafc] text-[14px] focus:outline-none focus:border-[#463bf9] focus:ring-1 focus:ring-[#463bf9] transition-all placeholder-[#4b5563];
+}
+
+.aim-button-primary {
+  @apply bg-[#463bf9] hover:bg-[#3a30db] text-white font-medium rounded-xl transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#463bf9] focus:ring-offset-2 focus:ring-offset-[#0f1115];
+}
+
+.aim-button-secondary {
+  @apply bg-[#1a1d24] hover:bg-[#232732] text-[#e2e8f0] font-medium rounded-xl border border-[#2b303b] transition-all focus:outline-none;
+}
+
+.aim-label {
+  @apply block text-sm font-medium text-[#94a3b8] mb-2 uppercase tracking-wide text-[11px];
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b303b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f4657;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+

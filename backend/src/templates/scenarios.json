@@ -1,0 +1,34 @@
+{
+  "proposal": {
+    "subject": "Proposal for {project_name}",
+    "tone": {
+      "politeness": "high",
+      "formality": "formal",
+      "urgency": "low"
+    },
+    "opening": "I hope you are doing well.",
+    "closing": "Please let me know if you have any questions."
+  },
+
+  "project_update": {
+    "subject": "Update on {project_name}",
+    "tone": {
+      "politeness": "high",
+      "formality": "formal",
+      "urgency": "low"
+    },
+    "opening": "I would like to provide an update regarding the project.",
+    "closing": "Looking forward to your feedback."
+  },
+
+  "payment_reminder": {
+    "subject": "Payment Reminder for Invoice #{invoice_id}",
+    "tone": {
+      "politeness": "medium",
+      "formality": "formal",
+      "urgency": "high"
+    },
+    "opening": "I hope this message finds you well.",
+    "closing": "Kindly process the payment at your earliest convenience."
+  }
+}

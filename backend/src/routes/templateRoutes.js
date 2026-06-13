@@ -1,28 +1,27 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../db");
+const prisma = require("../config/prisma");
 
 router.get("/template", async (req, res) => {
   try {
-    const result = await pool.query(`
-      SELECT 
-        id,
-        template_name,
-        email_type,
-        subject_template,
-        opening_template,
-        body_template,
-        closing_template,
-        primary_tone,
-        secondary_tone,
-        formality_level,
-        urgency_level,
-        response_expected
-      FROM email_templates
-      LIMIT 1
-    `);
+    const template = await prisma.email_templates.findFirst({
+      select: {
+        id: true,
+        template_name: true,
+        email_type: true,
+        subject_template: true,
+        opening_template: true,
+        body_template: true,
+        closing_template: true,
+        primary_tone: true,
+        secondary_tone: true,
+        formality_level: true,
+        urgency_level: true,
+        response_expected: true
+      }
+    });
 
-    res.json(result.rows[0]);
+    res.json(template);
   }catch (err) {
   console.error("GEMINI FULL ERROR:", err);
   console.error("GEMINI MESSAGE:", err.message);

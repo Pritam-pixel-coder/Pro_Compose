@@ -17,7 +17,6 @@ app.use(cors());
 app.use(express.json());
 
 
-const promptTestRoute = require('./routes/promptTest');
 
 const generateEmailRoute = require('./routes/generateEmail');
 app.use('/generate-email', generateEmailRoute);
@@ -26,7 +25,7 @@ const templateRoutes = require("./routes/templateRoutes");
 
 
 //Routes
-app.use('/prompt', promptTestRoute);
+
 app.use("/api", templateRoutes);
 
 // Health check route
